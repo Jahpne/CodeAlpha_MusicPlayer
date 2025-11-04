@@ -1,0 +1,218 @@
+ /* Music player container - Glassmorphism effect */
+        .music-player {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Player header - Song info section */
+        .player-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Album art styling - Circular with shadow */
+        .album-art {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            animation: rotate 20s linear infinite;
+            animation-play-state: paused;
+        }
+
+        /* Album art rotation animation when playing */
+        .album-art.playing {
+            animation-play-state: running;
+        }
+
+        /* Album art image styling */
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Song info styling */
+        .song-info {
+            margin-bottom: 10px;
+        }
+
+        /* Song title styling */
+        .song-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Artist name styling */
+        .artist {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+        }
+
+        /* Album name styling */
+        .album {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Progress section - Time and progress bar */
+        .progress-section {
+            margin-bottom: 25px;
+        }
+
+        /* Time labels styling */
+        .time-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Progress bar container */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Progress bar fill - Purple gradient */
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Progress bar handle */
+        .progress-handle {
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Show handle on hover */
+        .progress-bar:hover .progress-handle {
+            opacity: 1;
+        }
+
+        /* Controls section - Playback buttons */
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Control button styling */
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Control button hover effect */
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Play button - Larger with different gradient */
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8a2be2, #9370db);
+            font-size: 1.5rem;
+        }
+
+        /* Play button hover effect */
+        .play-btn:hover {
+            background: linear-gradient(135deg, #9370db, #8a2be2);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Volume section - Volume control */
+        .volume-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* Volume icon styling */
+        .volume-icon {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Volume bar container */
+        .volume-bar {
+            flex: 1;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Volume bar fill */
+        .volume-level {
+            height: 100%;
+            background: linear-gradient(90deg, #8a2be2, #9370db);
+            border-radius: 10px;
+            width: 70%;
+        }
+
+        /* Volume handle */
+        .volume-handle {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Show volume handle on hover */
+        .volume-bar:hover .volume-handle {
+            opacity: 1;
+        }
+

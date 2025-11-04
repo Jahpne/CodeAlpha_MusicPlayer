@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Music Player | CodeAlpha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="playlist.css">
+
+</head>
+<body>
+    <div class="music-player">
+        <!-- Player header with album art and song info -->
+        <div class="player-header">
+            <div class="album-art" id="albumArt">
+                <img src="assets/15.jpg" alt="Album Art">
+            </div>
+            <div class="song-info">
+                <div class="song-title" id="songTitle">Song Title</div>
+                <div class="artist" id="artist">Song Artist</div>
+                <div class="album" id="album">Song Album</div>
+            </div>
+        </div>
+        
+        <!-- Progress section with time and progress bar -->
+        <div class="progress-section">
+            <div class="time-labels">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-handle" id="progressHandle"></div>
+            </div>
+        </div>
+        
+        <!-- Controls section with playback buttons -->
+        <div class="controls">
+            <button class="control-btn" id="shuffleBtn" title="Shuffle">
+                🔀
+            </button>
+            <button class="control-btn" id="prevBtn" title="Previous">
+                ⏮
+            </button>
+            <button class="control-btn play-btn" id="playBtn" title="Play">
+                ▶
+            </button>
+            <button class="control-btn" id="nextBtn" title="Next">
+                ⏭
+            </button>
+            <button class="control-btn" id="repeatBtn" title="Repeat">
+                🔁
+            </button>
+        </div>
+        
+        <!-- Volume section with volume control -->
+        <div class="volume-section">
+            <div class="volume-icon">🔊</div>
+            <div class="volume-bar" id="volumeBar">
+                <div class="volume-level" id="volumeLevel"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+        </div>
+        
+        <!-- Playlist section -->
+        <div class="playlist-section">
+            <div class="playlist-title">
+                <span>Playlist</span>
+                <button class="toggle-playlist" id="togglePlaylist">▼</button>
+            </div>
+            <div class="playlist" id="playlist">
+                <!-- Playlist items will be dynamically added here -->
+            </div>
+            <input type="file" id="fileInput" class="file-input" accept="audio/*" multiple style="display: none;">
+            <label for="fileInput" class="file-input-label">
+                + Add Music
+            </label>
+        </div>
+    </div>
+
+    <!-- Audio element - Hidden but controls playback -->
+    <audio id="audioPlayer"></audio>
+
+ 
+    
+    <script src="make.js"></script>   
+    <script src="script.js"></script>   
+</body>
+</html>
